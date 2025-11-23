@@ -1,10 +1,10 @@
-🕵️ Web Exploitation Challenge — Full Walkthrough (Final Version)
+# 🕵️ Web Exploitation Challenge — Full Walkthrough (Final Version)
 
 This is a complete step-by-step walkthrough of everything we did to solve the challenge — from enumeration to server-status leakage, directory fuzzing, web shell discovery, API interaction, and final privilege escalation.
 
 Designed so future-you can reread this and immediately retrace every step.
 
-1️⃣ Initial Discovery — /server-status
+# 1️⃣ Initial Discovery — /server-status
 
 While scanning the target:
 
@@ -27,7 +27,7 @@ Unknown PHP scripts
 
 This was the first major leak — giving us reconnaissance normally not possible.
 
-2️⃣ Fuzzing /uploads/
+# 2️⃣ Fuzzing /uploads/
 
 We enumerated files under /uploads/ using ffuf/wfuzz:
 
@@ -46,7 +46,7 @@ image.jpg     (200)
 cat.php seemed harmless…
 but shell.php was very suspicious — a common webshell filename.
 
-3️⃣ Verifying shell.php
+# 3️⃣ Verifying shell.php
 
 We tested:
 
@@ -66,7 +66,7 @@ Commands are encoded and returned in JSON + base64
 
 This was our entry point.
 
-4️⃣ Using p0wny Shell Programmatically
+# 4️⃣ Using p0wny Shell Programmatically
 
 Correct usage:
 
@@ -93,7 +93,7 @@ Current working directory (decoded)
 
 From here we had a fully working remote shell.
 
-5️⃣ Exploring the Filesystem
+# 5️⃣ Exploring the Filesystem
 
 We repeatedly executed:
 
@@ -114,7 +114,7 @@ Eventually, exploring / revealed interesting directories:
 
 The /flags directory contained files visible in decoded output.
 
-6️⃣ Locating the Flag
+# 6️⃣ Locating the Flag
 
 From decoded directory listings, we found:
 
@@ -130,7 +130,7 @@ Again, the response was base64 — we decoded it manually.
 
 This revealed the final flag.
 
-🎉 FINAL FLAG
+#🎉 FINAL FLAG
 MASONCC{images_give_us_bash?}
 
 
