@@ -1,4 +1,4 @@
-# Cryptography
+# CRYPTOCURRENCY
 
 This directory acts as a vault for different types of cryptography-based CTF
 challenges. Each subfolder contains the methods, logic, and scripts used to
