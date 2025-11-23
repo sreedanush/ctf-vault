@@ -130,7 +130,7 @@ Again, the response was base64 — we decoded it manually.
 
 This revealed the final flag.
 
-#🎉 FINAL FLAG
+# 🎉 FINAL FLAG
 MASONCC{images_give_us_bash?}
 
 
